@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- Custom F1 Project Rules ---
+# Ignore all CSV data files to keep the repository light
+data/*.csv
+data/*.zip
