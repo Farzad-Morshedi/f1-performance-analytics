@@ -20,12 +20,12 @@ The goal is to measure how much of F1 performance is **predictable** (car pace, 
 ## 🧩 Project Structure
 
 f1-performance-analytics/
-│
-├── data/                 # Raw & cleaned datasets (not included in repo)
-├── notebooks/            # Jupyter notebooks for each analysis stage
-├── src/                  # Python modules for cleaning, modeling, metrics
-├── visuals/              # Exported charts and diagrams
-└── README.md
+|
++-- data/        # Raw & cleaned datasets (not included in repo)
++-- notebooks/   # Jupyter notebooks for each analysis stage
++-- src/         # Python modules for cleaning, modeling, metrics
++-- visuals/     # Exported charts and diagrams
+`-- README.md
 
 ---
 
