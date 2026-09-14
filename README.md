@@ -17,14 +17,24 @@ The goal is to measure how much of F1 performance is **predictable** (car pace, 
 
 ---
 
+## 🚥 Project Status
+
+* [x] **Project B — The Midfield King Metric:** Complete (Stages 1–5 executed, pure pace gaps isolated, grid mobility quantified).
+* [ ] **Project A — The Grid-to-Podium Predictor:** Pending (Linear regression modeling, track-specific segmentation for Monaco vs. Monza).
+* [ ] **Interactive Dashboard:** Pending (Plotly/Dash implementation for web deployment).
+
+---
+
 ## 🧩 Project Structure
 
-f1-performance-analytics/<br>
-data/ - raw and cleaned datasets (not included in repo)<br>
-notebooks/ - Jupyter notebooks for each analysis stage<br>
-src/ - Python modules for cleaning, modeling, metrics<br>
-visuals/ - exported charts and diagrams<br>
-README.md
+```text
+f1-performance-analytics/
+├── data/                  # Raw Kaggle CSVs and clean exported summary datasets
+├── notebooks/             # Jupyter notebooks covering each lifecycle stage
+├── src/                   # Python modules for data wrangling, metrics, and visualization
+├── visuals/               # Exported figures, dashboards, and performance matrices
+└── README.md              # Project documentation and summary report
+```
 
 ---
 
@@ -47,7 +57,7 @@ How does the **R² correlation** between qualifying and finishing position diffe
 ## 🎯 Project B — The Midfield King Metric
 
 **Objective**  
-Identify drivers who consistently outperform their machinery by gaining positions relative to their qualifying pace.
+Identify drivers and constructors who consistently outperform their machinery by isolating pure race pace and quantifying grid position mobility across the Hybrid Era (2014–2026).
 
 **Method**  
 Feature engineering, DNF filtering, and aggregated performance scoring.
@@ -57,6 +67,20 @@ Finishing position alone hides reliability noise. Removing DNFs reveals **true o
 
 **Key Question**  
 Which drivers gain the most positions **after removing mechanical DNFs**, and how consistent is that performance across seasons?
+
+**Key Findings**
+* **Top-Tier Determinism vs. Midfield Volatility:** Top-tier teams display a strong grid-to-finish correlation ($r_s = 0.589$), whereas midfield race outcomes are 22% more volatile ($r_s = 0.460$), driven by strategy variance, DRS trains, and traffic.
+* **The 0.8s/lap Performance Cliff:** Pure race pace analytics reveal an isolated top tier—Mercedes ($+0.57\text{s/lap}$), Red Bull ($+0.83\text{s/lap}$), and Ferrari ($+1.01\text{s/lap}$)—separated by a massive $0.8$-second gap from the fastest midfield entry (Aston Martin at $+1.84\text{s/lap}$).
+* **DNF-Adjusted "Midfield King" Driver Rankings:**
+  * **Backmarker Positional Floor:** Felipe Nasr ($+2.63$ positions gained/race, $\sigma=3.80$) and Stoffel Vandoorne ($+2.47$, $\sigma=3.89$) lead the metric. Drivers qualifying near the back face zero downside risk while benefiting from attrition ahead.
+  * **Driver Volatility Spectrum:** Pastor Maldonado demonstrates extreme outcome variance ($\sigma=5.01$, $+1.23$ avg gain), whereas Nicholas Latifi ($\sigma=3.67$) shows tighter, lower-risk positional consistency.
+* **Noise Variance Reduction:** Filtering pit stops and safety car disruptions reduced dataset lap time variance by $\approx 6.1\%$, establishing an unpolluted baseline for car development and stint consistency.
+
+**Generated Data Artifacts**
+* f1_driver_pace_summary.csv — 4,438 clean driver-race stints with median pace gaps and consistency metrics.
+* f1_constructor_pace_summary.csv — Aggregated constructor hierarchy and within-stint standard deviation.
+* f1_grid_mobility_summary.csv — Cohort-level Spearman rank correlations and mean position deltas.
+* f1_midfield_kings_summary.csv — DNF-adjusted driver position gains and multi-season standard deviations.
 
 ---
 
@@ -69,15 +93,19 @@ Which drivers gain the most positions **after removing mechanical DNFs**, and ho
 
 ---
 
-## 📊 Planned Outputs
+## 📊 Project Deliverables & Visuals
 
-- Circuit-specific regression models  
-- R² comparison visualizations (Monaco vs. Monza and other circuits)  
-- “Midfield King” scoring table by driver and season  
-- Driver consistency heatmaps  
-- Reliability-adjusted overtaking metrics  
-- Season-over-season trend visualizations  
+- [x] F1 Hybrid Era Performance Matrix (Pure Pace Gap vs. Stint Variance Scatter Plot)
 
+- [x] Grid Determinism vs. Midfield Mobility Dashboard (Spearman Correlation & Position Delta)
+
+- [x] Top 10 Drivers by Net Position Gain (Mechanical DNFs Removed Bar Chart with Variance Error Bars)
+
+- [x] Cleaned Summary CSV Data Exports (f1_driver_pace_summary.csv, f1_constructor_pace_summary.csv, f1_grid_mobility_summary.csv)
+
+- [ ] Circuit-specific regression models (Project A: Monaco vs. Monza)
+
+- [ ] Interactive Dash/Plotly Web Application
 ---
 
 ## 🚧 Upcoming Work
