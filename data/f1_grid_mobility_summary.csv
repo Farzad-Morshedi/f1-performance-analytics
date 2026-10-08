@@ -1,0 +1,4 @@
+Cohort,Sample Size,Grid-Finish Correlation (Spearman),Mean Position Delta,Std Dev (Position Fluidity),Max Positions Gained
+Overall Dataset,4547,0.61,-0.568,5.836,19
+Top-Tier Teams,1808,0.589,-0.878,6.495,19
+Midfield Teams,2739,0.46,-0.364,5.349,14

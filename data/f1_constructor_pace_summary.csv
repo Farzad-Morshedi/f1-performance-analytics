@@ -1,0 +1,15 @@
+constructor_name,is_midfield,stints_analyzed,avg_pace_gap,median_pace_gap,avg_consistency_std
+Mercedes,False,449,0.569,0.276,2.002
+Red Bull,False,439,0.832,0.477,1.993
+Ferrari,False,434,1.007,0.571,1.882
+Aston Martin,True,438,1.837,1.556,1.972
+McLaren,False,436,1.916,1.621,2.028
+Unknown Team,True,231,2.427,1.969,2.091
+RB F1 Team,True,442,2.454,2.033,2.003
+Williams,True,439,2.521,2.035,1.936
+Alpine F1 Team,True,729,2.578,1.992,1.868
+Alfa Romeo,True,204,2.642,1.977,1.959
+Lotus F1,True,67,2.679,1.871,2.179
+Marussia,True,29,3.71,3.64,2.795
+Manor Marussia,True,71,4.284,3.928,2.361
+Caterham,True,30,4.917,3.625,2.631
