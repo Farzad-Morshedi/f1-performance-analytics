@@ -29,7 +29,7 @@ f1-performance-analytics/
 ├── src/                   # Python modules for data wrangling, metrics, and visualization
 ├── visuals/               # Exported figures, dashboards, and performance matrices
 └── README.md              # Project documentation and summary report
-
+```
 ---
 
 ## 🎯 Project A — The Grid-to-Podium Predictor
